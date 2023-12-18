@@ -1,7 +1,7 @@
 package com.hexaware.entities;
 
 import java.util.Date;
-
+//courier class
 public class Courier {
     private long courierID;
     private String senderName;
