@@ -1,5 +1,7 @@
-package com.hexaware.entities;
+package com.hexaware.dao;
 import java.util.Date;
+
+import com.hexaware.entities.Employee;
 
 public interface ICourierAdminService {
    

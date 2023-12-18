@@ -1,6 +1,8 @@
-package com.hexaware.entities;
+package com.hexaware.dao;
 import java.util.Date;
 import java.util.List;
+
+import com.hexaware.entities.Courier;
 
 public interface ICourierUserService {
     

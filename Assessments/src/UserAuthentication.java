@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class UserAuthentication {
 	 public static void main(String[] args) {
-		 String employeeUsername;
-         String employeePassword;
-         String customerUsername;
-         String customerPassword;
+		 String employeeUsername = null;
+         String employeePassword = null;
+         String customerUsername = null;
+         String customerPassword = null;
 
          Scanner scanner = new Scanner(System.in);
 

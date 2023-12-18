@@ -1,27 +1,45 @@
 package com.hexaware.dao;
 
-import java.sql.Connection;
+import com.hexaware.connectionutil.DBConnection;
 
-import util.DBConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class CourierServiceDb {
+    private static Connection connection = DBConnection.getConnection();
 
-    // Static variable to hold the database connection
-    private static Connection connection;
-
-    // Private constructor to prevent instantiation from outside
     private CourierServiceDb() {
-        // Initialize the connection in the constructor
-        connection = DBConnection.getDBConnection("your_connection_string_here");
     }
 
-    // Method to get the database connection
-    public static Connection getConnection() {
-        // If the connection is null, create a new instance of the class
-        if (connection == null) {
-            new CourierServiceDb();
+    
+    public static void getDeliveryHistory(String trackingNumber) {
+        String query = "SELECT * FROM Courier WHERE trackingNumber = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, trackingNumber);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            
+            while (resultSet.next()) {
+                
+                String status = resultSet.getString("status");
+                String deliveryDate = resultSet.getString("deliveryDate");
+                System.out.println("Status: " + status + ", Delivery Date: " + deliveryDate);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return connection;
+    }
+
+    
+    public static void generateShipmentStatusReport() {
+       
+    }
+
+   
+    public static void generateRevenueReport() {
+        
     }
 }
-

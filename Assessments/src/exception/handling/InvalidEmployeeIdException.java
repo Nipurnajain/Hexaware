@@ -1,5 +1,7 @@
 package exception.handling;
 
-public class InvalidEmployeeIdException {
-
+public class InvalidEmployeeIdException extends Exception {
+	public InvalidEmployeeIdException (String message) {
+        super(message);
+    }
 }

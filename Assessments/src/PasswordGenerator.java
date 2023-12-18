@@ -1,15 +1,16 @@
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
 public class PasswordGenerator {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchAlgorithmException {
         // Example usage:
         int passwordLength = 12; // You can adjust the length as needed
         String securePassword = generateSecurePassword(passwordLength);
         System.out.println("Generated Password: " + securePassword);
     }
 
-    public static String generateSecurePassword(int length) {
+    public static String generateSecurePassword(int length) throws NoSuchAlgorithmException {
         // Define character sets for each category
         String uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -47,7 +48,7 @@ public class PasswordGenerator {
         return characterSet.charAt(randomIndex);
     }
 
-    private static String shufflePassword(String password) {
+    private static String shufflePassword(String password) throws NoSuchAlgorithmException {
         // Convert the password to a char array for shuffling
         char[] passwordArray = password.toCharArray();
 

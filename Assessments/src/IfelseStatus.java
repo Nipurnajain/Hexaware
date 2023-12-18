@@ -2,7 +2,7 @@
 public class IfelseStatus {
 	public static void main(String[] args) {
 		// 2.1--------------------------------------------------------------------------------------------------
-		String status;
+		String status = null;
 		if(status=="processing") {
 			System.out.println("order is not delivered , its under process and will be delivered soon");
 		}
