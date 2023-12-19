@@ -1,5 +1,5 @@
 public class AddressSimilarityFinder {
-
+//similarity finder
     public static void main(String[] args) {
         // Example usage:
         String address1 = "123 Main St, Cityville, State, 12345";
